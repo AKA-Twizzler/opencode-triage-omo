@@ -1,0 +1,62 @@
+{
+  "name": "opencode-triage-omo",
+  "version": "1.3.3",
+  "description": "Extended OMO triage: routes to agents, skills, and tools via keyword scoring for OpenCode",
+  "license": "MIT",
+  "author": "Carlos Spagnoletti",
+  "keywords": [
+    "opencode",
+    "omo",
+    "triage",
+    "agent-routing",
+    "skill-routing",
+    "router",
+    "skill-discovery",
+    "token-optimization",
+    "ai-coding-agent"
+  ],
+  "type": "module",
+  "main": "src/index.ts",
+  "bin": {
+    "opencode-triage-omo": "./bin/opencode-triage.cjs"
+  },
+  "files": [
+    "src/",
+    "bin/",
+    ".opencode/commands/",
+    "postinstall.cjs",
+    "README.md"
+  ],
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test test/**/*.test.ts",
+    "prepublishOnly": "npm run check && npm run test",
+    "postinstall": "node postinstall.cjs"
+  },
+  "peerDependencies": {
+    "@opencode-ai/plugin": ">=1.14.0"
+  },
+  "peerDependenciesMeta": {
+    "@opencode-ai/plugin": {
+      "optional": false
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AKA-Twizzler/opencode-triage-omo"
+  },
+  "bugs": {
+    "url": "https://github.com/AKA-Twizzler/opencode-triage-omo/issues"
+  },
+  "homepage": "https://github.com/AKA-Twizzler/opencode-triage-omo#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "25.6.2",
+    "typescript": "6.0.3"
+  }
+}
